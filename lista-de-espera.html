@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vamos começar? — Rosane Tailine Psicóloga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#D94F8C;
+    --pink-dark:#8A2C5C;
+    --gold:#B8902E;
+    --purple:#E63577;
+    --rose:#F3D9E4;
+    --cream:#FBF6F1;
+    --ink:#3A2E38;
+    --ink-soft:#6E5C68;
+    --white:#FFFFFF;
+    --danger:#B3413E;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#221A22;
+      --white:#2C2130;
+      --ink:#F4E9EE;
+      --ink-soft:#D6C3CE;
+      --rose:#3A2A34;
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#221A22;
+    --white:#2C2130;
+    --ink:#F4E9EE;
+    --ink-soft:#D6C3CE;
+    --rose:#3A2A34;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Lato',sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100%;
+  }
+  h1,h2{font-family:'Playfair Display',serif;font-weight:600;color:var(--ink);line-height:1.25;}
+  .wrap{max-width:620px;margin:0 auto;padding:0 22px;}
+
+  header{
+    background:linear-gradient(135deg,var(--pink-dark),var(--purple));
+    padding:52px 0 44px;
+    text-align:center;
+    color:#fff;
+  }
+  header .eyebrow{
+    display:inline-block;
+    background:rgba(255,255,255,0.16);
+    border:1px solid rgba(255,255,255,0.35);
+    color:#fff;
+    font-size:0.82rem;
+    font-weight:700;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:16px;
+  }
+  header h1{color:#fff;font-size:1.85rem;max-width:22ch;margin:0 auto 14px;}
+  header p{color:rgba(255,255,255,0.88);font-size:1.02rem;max-width:42ch;margin:0 auto;}
+
+  main{padding:40px 0 70px;}
+
+  .card{
+    background:var(--white);
+    border-radius:14px;
+    padding:34px 28px;
+    box-shadow:0 10px 34px -16px rgba(58,46,56,0.25);
+    border-top:6px solid var(--gold);
+  }
+
+  .field{margin-bottom:24px;}
+  .field label{
+    display:block;
+    font-weight:700;
+    font-size:0.96rem;
+    color:var(--pink-dark);
+    margin-bottom:8px;
+  }
+  .field .hint{
+    display:block;
+    font-weight:400;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+  .req{color:var(--pink);font-weight:700;}
+
+  input[type="text"],
+  input[type="tel"],
+  textarea{
+    width:100%;
+    font-family:'Lato',sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+    background:var(--cream);
+    border:1.5px solid rgba(91,58,110,0.18);
+    border-radius:8px;
+    padding:13px 14px;
+  }
+  input:focus,textarea:focus{
+    outline:none;
+    border-color:var(--purple);
+    background:var(--white);
+  }
+  textarea{resize:vertical;min-height:88px;}
+
+  .choice-group{display:flex;flex-wrap:wrap;gap:10px;}
+  .choice-group input[type="radio"]{position:absolute;opacity:0;width:0;height:0;}
+  .choice-group label.chip{
+    position:relative;
+    cursor:pointer;
+    background:var(--cream);
+    border:1.5px solid rgba(91,58,110,0.18);
+    color:var(--ink);
+    font-weight:600;
+    font-size:0.95rem;
+    padding:11px 20px;
+    border-radius:24px;
+    margin:0;
+    transition:all .15s ease;
+  }
+  .choice-group input[type="radio"]:checked + label.chip{
+    background:var(--pink-dark);
+    border-color:var(--pink-dark);
+    color:#fff;
+  }
+  .choice-group input[type="radio"]:focus-visible + label.chip{
+    outline:2.5px solid var(--purple);
+    outline-offset:2px;
+  }
+
+  .consent{
+    background:var(--rose);
+    border-radius:10px;
+    padding:18px 18px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    margin-bottom:26px;
+  }
+  .consent input[type="checkbox"]{
+    margin-top:3px;
+    width:18px;height:18px;
+    accent-color:var(--pink-dark);
+    flex-shrink:0;
+  }
+  .consent p{font-size:0.88rem;color:var(--ink);}
+  .consent p b{color:var(--pink-dark);}
+
+  .btn{
+    display:block;
+    width:100%;
+    background:var(--pink-dark);
+    color:#fff;
+    font-family:'Lato',sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    padding:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 10px 24px -8px rgba(138,44,92,0.45);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(138,44,92,0.55);}
+  .btn:disabled{opacity:0.65;cursor:wait;transform:none;}
+  .btn:focus-visible{outline:3px solid var(--purple);outline-offset:3px;}
+
+  .error-msg{
+    display:none;
+    background:#FBEAEA;
+    color:var(--danger);
+    border-left:4px solid var(--danger);
+    border-radius:6px;
+    padding:12px 14px;
+    font-size:0.9rem;
+    margin-bottom:20px;
+  }
+  .error-msg.show{display:block;}
+
+  .success{
+    display:none;
+    text-align:center;
+    padding:20px 6px 6px;
+  }
+  .success.show{display:block;}
+  .success .icon{
+    width:64px;height:64px;border-radius:50%;
+    background:var(--rose);color:var(--pink-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.8rem;margin:0 auto 18px;
+  }
+  .success h2{font-size:1.5rem;margin-bottom:12px;}
+  .success p{color:var(--ink-soft);font-size:1rem;max-width:38ch;margin:0 auto;}
+
+  footer{padding:30px 0 40px;text-align:center;color:var(--ink-soft);font-size:0.85rem;}
+
+  @media (max-width:480px){
+    header{padding:44px 0 36px;}
+    header h1{font-size:1.55rem;}
+    .card{padding:26px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Formulário de contato</span>
+    <h1>Vamos começar a cuidar de você?</h1>
+    <p>Atendimento individual ou grupo terapêutico: preencha rapidinho abaixo. Vou ler com calma e entro em contato pelo seu WhatsApp para conversarmos sobre o melhor caminho.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="card">
+
+      <div id="errorMsg" class="error-msg">Não consegui enviar agora. Confira os campos obrigatórios e tente novamente, ou me chame direto pelo WhatsApp.</div>
+
+      <form id="leadForm">
+        <div class="field">
+          <label for="nome">Seu nome <span class="req">*</span></label>
+          <input type="text" id="nome" name="nome" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">Seu WhatsApp <span class="req">*</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(67) 99999-9999" autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label for="email">Seu e-mail <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="motivo">O que te trouxe até aqui? <span class="req">*</span></label>
+          <textarea id="motivo" name="motivo" required placeholder="Conte um pouco sobre o que você está sentindo ou vivendo agora"></textarea>
+        </div>
+
+        <div class="field">
+          <label id="interesse-label">O que você está buscando? <span class="req">*</span></label>
+          <div class="choice-group" role="radiogroup" aria-labelledby="interesse-label">
+            <input type="radio" id="interesse-individual" name="interesse" value="Atendimento individual" required>
+            <label class="chip" for="interesse-individual">Atendimento individual</label>
+            <input type="radio" id="interesse-grupo" name="interesse" value="Grupo terapêutico (O Reencontro)">
+            <label class="chip" for="interesse-grupo">Grupo terapêutico</label>
+            <input type="radio" id="interesse-casal" name="interesse" value="Terapia de casal">
+            <label class="chip" for="interesse-casal">Terapia de casal</label>
+            <input type="radio" id="interesse-tsu" name="interesse" value="Terapia de Sessão Única (TSU)">
+            <label class="chip" for="interesse-tsu">Sessão Única (TSU)</label>
+            <input type="radio" id="interesse-naosei" name="interesse" value="Ainda não sei, quero conversar">
+            <label class="chip" for="interesse-naosei">Ainda não sei</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="terapia-label">Já fez terapia antes? <span class="req">*</span></label>
+          <div class="choice-group" role="radiogroup" aria-labelledby="terapia-label">
+            <input type="radio" id="terapia-sim" name="jaFezTerapia" value="Sim" required>
+            <label class="chip" for="terapia-sim">Sim</label>
+            <input type="radio" id="terapia-nao" name="jaFezTerapia" value="Não">
+            <label class="chip" for="terapia-nao">Não</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="horario-label">Prefere atendimento em qual horário? <span class="req">*</span></label>
+          <div class="choice-group" role="radiogroup" aria-labelledby="horario-label">
+            <input type="radio" id="horario-manha" name="horario" value="Manhã" required>
+            <label class="chip" for="horario-manha">Manhã</label>
+            <input type="radio" id="horario-tarde" name="horario" value="Tarde">
+            <label class="chip" for="horario-tarde">Tarde</label>
+            <input type="radio" id="horario-noite" name="horario" value="Noite">
+            <label class="chip" for="horario-noite">Noite</label>
+          </div>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consentimento" name="consentimento" value="Concordou" required>
+          <p><label for="consentimento"><b>Autorizo o uso dos meus dados.</b> Sei que as informações acima, incluindo o que compartilhar sobre meu momento emocional, serão usadas apenas para que Rosane Tailine entre em contato comigo sobre atendimento psicológico, conforme a LGPD (Lei Geral de Proteção de Dados). Meus dados não serão compartilhados com terceiros. <span class="req">*</span></label></p>
+        </div>
+
+        <button type="submit" class="btn" id="submitBtn">Quero dar esse passo</button>
+      </form>
+
+      <div id="successMsg" class="success">
+        <div class="icon">✓</div>
+        <h2>Recebi sua mensagem</h2>
+        <p>Obrigada por confiar em mim com isso. Vou ler com carinho e te chamo no WhatsApp em breve para conversarmos.</p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  Rosane Tailine · Psicóloga Clínica · CRP 14/08284-5
+</footer>
+
+<script>
+  // Cole aqui a URL do seu Google Apps Script Web App (termina em /exec)
+  const SCRIPT_URL = "COLE_AQUI_A_URL_DO_SEU_APPS_SCRIPT_WEB_APP";
+
+  const form = document.getElementById('leadForm');
+  const errorMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    errorMsg.classList.remove('show');
+
+    const data = new URLSearchParams();
+    data.append('nome', form.nome.value.trim());
+    data.append('whatsapp', form.whatsapp.value.trim());
+    data.append('email', form.email.value.trim());
+    data.append('interesse', form.interesse.value || '');
+    data.append('motivo', form.motivo.value.trim());
+    data.append('jaFezTerapia', form.jaFezTerapia.value || '');
+    data.append('horario', form.horario.value || '');
+    data.append('consentimento', form.consentimento.checked ? 'Sim' : 'Não');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      });
+      form.style.display = 'none';
+      successMsg.classList.add('show');
+    } catch (err) {
+      errorMsg.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Quero dar esse passo';
+    }
+  });
+</script>
+
+</body>
+</html>
