@@ -1,360 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vamos começar? — Rosane Tailine Psicóloga</title>
+<title>Lista de espera · Rosane Tailine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Entre na lista de espera do grupo terapêutico de Rosane Tailine, psicóloga clínica (CRP 14/08284-5).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
 <style>
-  :root{
-    --pink:#D94F8C;
-    --pink-dark:#8A2C5C;
-    --gold:#B8902E;
-    --purple:#E63577;
-    --rose:#F3D9E4;
-    --cream:#FBF6F1;
-    --ink:#3A2E38;
-    --ink-soft:#6E5C68;
-    --white:#FFFFFF;
-    --danger:#B3413E;
-    box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
+/* Página de captura com uma missão só: liberar o guia. Paleta e fontes da marca Rosane Tailine. */
+:root{
+  --rd:#BE1F6B; --dp:#8F1456; --pink:#D94F8C; --lt:#F6DCE4;
+  --gold:#B8902E; --gold2:#E3C77E;
+  --cream:#FBF6F3; --white:#FFFFFF; --ink:#3A2430; --soft:#745F6B;
+  --line:rgba(184,144,46,.38); --btn-ink:#FFFFFF;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --cream:#1F1419; --white:#2B1D25; --lt:#3A2430; --ink:#F7E8EE; --soft:#DCC5CF;
+    --line:rgba(227,199,126,.34); --rd:#E05A93; --dp:#F08AB4; --gold:#E3C77E; color-scheme:dark
   }
-  html{scroll-padding-top:env(safe-area-inset-top,0px);}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --cream:#221A22;
-      --white:#2C2130;
-      --ink:#F4E9EE;
-      --ink-soft:#D6C3CE;
-      --rose:#3A2A34;
-    }
-  }
-  :root[data-theme="dark"]{
-    --cream:#221A22;
-    --white:#2C2130;
-    --ink:#F4E9EE;
-    --ink-soft:#D6C3CE;
-    --rose:#3A2A34;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Lato',sans-serif;
-    font-weight:300;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    min-height:100%;
-  }
-  h1,h2{font-family:'Playfair Display',serif;font-weight:600;color:var(--ink);line-height:1.25;}
-  .wrap{max-width:620px;margin:0 auto;padding:0 22px;}
+}
+:root[data-theme="dark"]{
+  --cream:#1F1419; --white:#2B1D25; --lt:#3A2430; --ink:#F7E8EE; --soft:#DCC5CF;
+  --line:rgba(227,199,126,.34); --rd:#E05A93; --dp:#F08AB4; --gold:#E3C77E; color-scheme:dark
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0}
+img{max-width:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;text-wrap:balance;margin:0}
+h1 em,h2 em{font-style:italic;color:var(--rd)}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:1rem;letter-spacing:.02em;background:var(--rd);color:var(--btn-ink);border:0;border-radius:999px;padding:16px 26px;cursor:pointer;text-decoration:none;transition:background .2s ease, transform .2s ease}
+.btn:hover{background:var(--dp);transform:translateY(-1px)}
+.btn.line{background:transparent;color:var(--rd);border:1.5px solid var(--rd)}
+.btn.line:hover{background:var(--lt)}
+.btn[disabled]{opacity:.6;cursor:wait}
 
-  header{
-    background:linear-gradient(135deg,var(--pink-dark),var(--purple));
-    padding:52px 0 44px;
-    text-align:center;
-    color:#fff;
-  }
-  header .eyebrow{
-    display:inline-block;
-    background:rgba(255,255,255,0.16);
-    border:1px solid rgba(255,255,255,0.35);
-    color:#fff;
-    font-size:0.82rem;
-    font-weight:700;
-    padding:6px 16px;
-    border-radius:20px;
-    margin-bottom:16px;
-  }
-  header h1{color:#fff;font-size:1.85rem;max-width:22ch;margin:0 auto 14px;}
-  header p{color:rgba(255,255,255,0.88);font-size:1.02rem;max-width:42ch;margin:0 auto;}
+/* topo */
+.top{display:flex;align-items:center;gap:12px;padding-block:18px}
+.top img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.top b{font-family:var(--display);font-weight:400;font-size:1.25rem;display:block;line-height:1.1}
+.top small{font-size:.74rem;color:var(--soft);letter-spacing:.06em}
 
-  main{padding:40px 0 70px;}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-block:20px 72px}
+.hero > *{min-width:0}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.2rem);margin-top:12px}
+.lead{font-size:1.15rem;color:var(--soft);max-width:36ch;margin:18px 0 0}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.pills li{background:var(--lt);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:.88rem}
+.photo{position:relative;justify-self:center;width:min(380px,100%)}
+.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1.5px solid var(--gold2);border-radius:200px 200px 24px 24px}
+.photo img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:200px 200px 24px 24px;max-width:100%}
+.badge{position:absolute;left:-14px;bottom:28px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px 16px;font-size:.85rem;box-shadow:0 12px 30px -18px rgba(58,36,48,.5)}
+.badge b{font-family:var(--display);font-weight:500;font-size:1.25rem;color:var(--rd);display:block;line-height:1}
 
-  .card{
-    background:var(--white);
-    border-radius:14px;
-    padding:34px 28px;
-    box-shadow:0 10px 34px -16px rgba(58,46,56,0.25);
-    border-top:6px solid var(--gold);
-  }
+/* formulário */
+.formband{background:var(--white);border-block:1px solid var(--line)}
+.formgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding-block:56px}
+.formgrid > *{min-width:0}
+.formgrid h2{font-size:clamp(1.9rem,3.6vw,2.6rem)}
+.formgrid p.sub{color:var(--soft);margin:10px 0 0;max-width:38ch}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:6px}
+.field.full,.consent,.err,form .btn{grid-column:1 / -1}
+label{font-size:.86rem;font-weight:700}
+label .opt{font-weight:400;color:var(--soft)}
+input[type=text],input[type=email],input[type=tel]{font:inherit;font-size:1rem;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+input:focus{outline:2px solid var(--pink);outline-offset:0}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--soft);line-height:1.45;font-weight:400}
+.consent input{margin-top:2px;accent-color:var(--rd);width:18px;height:18px;flex:none}
+.err{color:var(--rd);font-size:.88rem;font-weight:700;margin:0}
+.done{display:grid;gap:14px;justify-items:start}
+.done h3{font-size:2rem}
+.done p{color:var(--soft);margin:0}
+.done .row{display:flex;flex-wrap:wrap;gap:10px}
 
-  .field{margin-bottom:24px;}
-  .field label{
-    display:block;
-    font-weight:700;
-    font-size:0.96rem;
-    color:var(--pink-dark);
-    margin-bottom:8px;
-  }
-  .field .hint{
-    display:block;
-    font-weight:400;
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    margin-top:6px;
-  }
-  .req{color:var(--pink);font-weight:700;}
+/* temas */
+.temas{padding-block:80px}
+.temas header{max-width:620px}
+.temas h2{font-size:clamp(2rem,4vw,2.8rem);margin-top:10px}
+.temas header p{color:var(--soft);margin:12px 0 0}
+.list{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding-block:22px;border-top:1px solid var(--line)}
+.list .n{font-family:var(--display);font-style:italic;font-size:1.6rem;color:var(--gold);line-height:1;grid-row:span 2}
+.list b{font-size:1.04rem}
+.list span{color:var(--soft);font-size:.94rem}
 
-  input[type="text"],
-  input[type="tel"],
-  textarea{
-    width:100%;
-    font-family:'Lato',sans-serif;
-    font-size:1rem;
-    color:var(--ink);
-    background:var(--cream);
-    border:1.5px solid rgba(91,58,110,0.18);
-    border-radius:8px;
-    padding:13px 14px;
-  }
-  input:focus,textarea:focus{
-    outline:none;
-    border-color:var(--purple);
-    background:var(--white);
-  }
-  textarea{resize:vertical;min-height:88px;}
+/* sobre */
+.sobre{background:var(--lt)}
+.sobregrid{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;padding-block:72px;max-width:900px;margin:0 auto}
+.sobregrid > *{min-width:0}
+.sobregrid img{width:220px;aspect-ratio:3/4;object-fit:cover;border-radius:18px;max-width:100%;display:block}
+.sobregrid h2{font-size:clamp(1.9rem,3.4vw,2.4rem);margin-top:8px}
+.sobregrid p{margin:12px 0 0;max-width:56ch}
+.sign{font-family:var(--display);font-style:italic;color:var(--rd);font-size:1.2rem;margin-top:16px!important}
 
-  .choice-group{display:flex;flex-wrap:wrap;gap:10px;}
-  .choice-group input[type="radio"]{position:absolute;opacity:0;width:0;height:0;}
-  .choice-group label.chip{
-    position:relative;
-    cursor:pointer;
-    background:var(--cream);
-    border:1.5px solid rgba(91,58,110,0.18);
-    color:var(--ink);
-    font-weight:600;
-    font-size:0.95rem;
-    padding:11px 20px;
-    border-radius:24px;
-    margin:0;
-    transition:all .15s ease;
-  }
-  .choice-group input[type="radio"]:checked + label.chip{
-    background:var(--pink-dark);
-    border-color:var(--pink-dark);
-    color:#fff;
-  }
-  .choice-group input[type="radio"]:focus-visible + label.chip{
-    outline:2.5px solid var(--purple);
-    outline-offset:2px;
-  }
+/* final */
+.final{text-align:center;padding-block:72px;display:grid;justify-items:center;gap:18px}
+.final h2{font-size:clamp(1.9rem,3.6vw,2.6rem);max-width:20ch}
+footer{border-top:1px solid var(--line);padding-block:26px 40px;font-size:.82rem;color:var(--soft);display:grid;gap:4px;text-align:center}
+footer b{color:var(--ink)}
 
-  .consent{
-    background:var(--rose);
-    border-radius:10px;
-    padding:18px 18px;
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    margin-bottom:26px;
-  }
-  .consent input[type="checkbox"]{
-    margin-top:3px;
-    width:18px;height:18px;
-    accent-color:var(--pink-dark);
-    flex-shrink:0;
-  }
-  .consent p{font-size:0.88rem;color:var(--ink);}
-  .consent p b{color:var(--pink-dark);}
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-block:8px 56px}
+  .photo{width:min(300px,82%)}
+  .formgrid{grid-template-columns:1fr;gap:24px;padding-block:44px}
+  .list{grid-template-columns:1fr 1fr}
+  .sobregrid{grid-template-columns:1fr;gap:24px;padding-block:56px}
+  .sobregrid img{width:180px}
+}
+@media (max-width:560px){
+  form{grid-template-columns:1fr}
+  .list{grid-template-columns:1fr}
+  .temas{padding-block:56px}
+  .badge{left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
-  .btn{
-    display:block;
-    width:100%;
-    background:var(--pink-dark);
-    color:#fff;
-    font-family:'Lato',sans-serif;
-    font-weight:700;
-    font-size:1.05rem;
-    padding:16px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    box-shadow:0 10px 24px -8px rgba(138,44,92,0.45);
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(138,44,92,0.55);}
-  .btn:disabled{opacity:0.65;cursor:wait;transform:none;}
-  .btn:focus-visible{outline:3px solid var(--purple);outline-offset:3px;}
-
-  .error-msg{
-    display:none;
-    background:#FBEAEA;
-    color:var(--danger);
-    border-left:4px solid var(--danger);
-    border-radius:6px;
-    padding:12px 14px;
-    font-size:0.9rem;
-    margin-bottom:20px;
-  }
-  .error-msg.show{display:block;}
-
-  .success{
-    display:none;
-    text-align:center;
-    padding:20px 6px 6px;
-  }
-  .success.show{display:block;}
-  .success .icon{
-    width:64px;height:64px;border-radius:50%;
-    background:var(--rose);color:var(--pink-dark);
-    display:flex;align-items:center;justify-content:center;
-    font-size:1.8rem;margin:0 auto 18px;
-  }
-  .success h2{font-size:1.5rem;margin-bottom:12px;}
-  .success p{color:var(--ink-soft);font-size:1rem;max-width:38ch;margin:0 auto;}
-
-  footer{padding:30px 0 40px;text-align:center;color:var(--ink-soft);font-size:0.85rem;}
-
-  @media (max-width:480px){
-    header{padding:44px 0 36px;}
-    header h1{font-size:1.55rem;}
-    .card{padding:26px 20px;}
-  }
+/* lista de espera */
+.esp{max-width:640px;margin:0 auto;padding-block:20px 56px}
+.esp h1{font-size:clamp(2.1rem,6vw,3rem);margin-top:10px}
+.esp p.sub{color:var(--soft);margin:14px 0 0}
+.esp form{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:26px}
+.esp select,.esp textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+.esp textarea{min-height:96px;resize:vertical}
+.esp select:focus,.esp textarea:focus{outline:2px solid var(--pink);outline-offset:0}
+.esp .btn.full{width:100%}
+.esp fieldset{border:0;padding:0;margin:0;min-width:0}
+.esp legend{font-size:.86rem;font-weight:700;padding:0;margin-bottom:8px}
+.esp .opt-r{display:flex;gap:10px;align-items:center;font-weight:400;font-size:1rem;padding:6px 0}
+.esp .opt-r input{accent-color:var(--rd);width:18px;height:18px}
 </style>
-</head>
-<body>
 
-<header>
-  <div class="wrap">
-    <span class="eyebrow">Formulário de contato</span>
-    <h1>Vamos começar a cuidar de você?</h1>
-    <p>Atendimento individual ou grupo terapêutico: preencha rapidinho abaixo. Vou ler com calma e entro em contato pelo seu WhatsApp para conversarmos sobre o melhor caminho.</p>
-  </div>
-</header>
 
-<main>
-  <div class="wrap">
-    <div class="card">
+<div class="wrap">
+  <header class="top">
+    <img src="data:image/jpeg;base64,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" alt="Logo Rosane Tailine Psicóloga">
+    <div><b>Rosane Tailine</b><small>Psicóloga · CRP 14/08284-5</small></div>
+  </header>
 
-      <div id="errorMsg" class="error-msg">Não consegui enviar agora. Confira os campos obrigatórios e tente novamente, ou me chame direto pelo WhatsApp.</div>
-
-      <form id="leadForm">
-        <div class="field">
-          <label for="nome">Seu nome <span class="req">*</span></label>
-          <input type="text" id="nome" name="nome" required autocomplete="name">
+  <main class="esp">
+    <div id="espForm">
+      <span class="eyebrow">Lista de espera</span>
+      <h1>Entrar na <em>lista de espera</em></h1>
+      <p class="sub">Deixe seus dados e eu entro em contato quando abrir uma nova turma do grupo ou uma vaga para terapia.</p>
+      <form id="espF" novalidate>
+        <div class="field"><label for="n">Seu nome</label><input id="n" type="text" autocomplete="given-name" placeholder="Como posso te chamar?"></div>
+        <div class="field"><label for="e">E-mail</label><input id="e" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+        <div class="field full"><label for="t">WhatsApp <span class="opt">(opcional)</span></label><input id="t" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000"></div>
+        <fieldset class="field full opts"><legend>Em qual você quer entrar na lista?</legend>
+          <label class="opt-r"><input type="radio" name="int" value="Grupo terapêutico" checked>Grupo terapêutico <span class="opt">(primeira opção)</span></label>
+          <label class="opt-r"><input type="radio" name="int" value="Terapia">Terapia</label>
+        </fieldset>
+        <div id="grpBox" class="field full" style="gap:14px">
+          <fieldset class="field full opts"><legend>Quais destes temas te interessam? <span class="opt">(pode marcar mais de um)</span></legend>
+            <label class="opt-r"><input type="checkbox" name="tema" value="Autoconfiança">Autoconfiança</label>
+            <label class="opt-r"><input type="checkbox" name="tema" value="Regulação emocional">Regulação emocional</label>
+            <label class="opt-r"><input type="checkbox" name="tema" value="Comunicação nas relações">Comunicação nas relações</label>
+          </fieldset>
+          <fieldset class="field full opts"><legend>Você deseja fazer parte do grupo terapêutico?</legend>
+            <label class="opt-r"><input type="radio" name="quer" value="Sim, quero participar">Sim, quero participar</label>
+            <label class="opt-r"><input type="radio" name="quer" value="Quero saber mais antes">Quero saber mais antes</label>
+          </fieldset>
         </div>
-
-        <div class="field">
-          <label for="whatsapp">Seu WhatsApp <span class="req">*</span></label>
-          <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(67) 99999-9999" autocomplete="tel">
-        </div>
-
-        <div class="field">
-          <label for="email">Seu e-mail <span class="req">*</span></label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-
-        <div class="field">
-          <label for="motivo">O que te trouxe até aqui? <span class="req">*</span></label>
-          <textarea id="motivo" name="motivo" required placeholder="Conte um pouco sobre o que você está sentindo ou vivendo agora"></textarea>
-        </div>
-
-        <div class="field">
-          <label id="interesse-label">O que você está buscando? <span class="req">*</span></label>
-          <div class="choice-group" role="radiogroup" aria-labelledby="interesse-label">
-            <input type="radio" id="interesse-individual" name="interesse" value="Atendimento individual" required>
-            <label class="chip" for="interesse-individual">Atendimento individual</label>
-            <input type="radio" id="interesse-grupo" name="interesse" value="Grupo terapêutico (O Reencontro)">
-            <label class="chip" for="interesse-grupo">Grupo terapêutico</label>
-            <input type="radio" id="interesse-casal" name="interesse" value="Terapia de casal">
-            <label class="chip" for="interesse-casal">Terapia de casal</label>
-            <input type="radio" id="interesse-tsu" name="interesse" value="Terapia de Sessão Única (TSU)">
-            <label class="chip" for="interesse-tsu">Sessão Única (TSU)</label>
-            <input type="radio" id="interesse-naosei" name="interesse" value="Ainda não sei, quero conversar">
-            <label class="chip" for="interesse-naosei">Ainda não sei</label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label id="terapia-label">Já fez terapia antes? <span class="req">*</span></label>
-          <div class="choice-group" role="radiogroup" aria-labelledby="terapia-label">
-            <input type="radio" id="terapia-sim" name="jaFezTerapia" value="Sim" required>
-            <label class="chip" for="terapia-sim">Sim</label>
-            <input type="radio" id="terapia-nao" name="jaFezTerapia" value="Não">
-            <label class="chip" for="terapia-nao">Não</label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label id="horario-label">Prefere atendimento em qual horário? <span class="req">*</span></label>
-          <div class="choice-group" role="radiogroup" aria-labelledby="horario-label">
-            <input type="radio" id="horario-manha" name="horario" value="Manhã" required>
-            <label class="chip" for="horario-manha">Manhã</label>
-            <input type="radio" id="horario-tarde" name="horario" value="Tarde">
-            <label class="chip" for="horario-tarde">Tarde</label>
-            <input type="radio" id="horario-noite" name="horario" value="Noite">
-            <label class="chip" for="horario-noite">Noite</label>
-          </div>
-        </div>
-
-        <div class="consent">
-          <input type="checkbox" id="consentimento" name="consentimento" value="Concordou" required>
-          <p><label for="consentimento"><b>Autorizo o uso dos meus dados.</b> Sei que as informações acima, incluindo o que compartilhar sobre meu momento emocional, serão usadas apenas para que Rosane Tailine entre em contato comigo sobre atendimento psicológico, conforme a LGPD (Lei Geral de Proteção de Dados). Meus dados não serão compartilhados com terceiros. <span class="req">*</span></label></p>
-        </div>
-
-        <button type="submit" class="btn" id="submitBtn">Quero dar esse passo</button>
+        <div class="field full" id="modBox" hidden><label for="mod">Que tipo de terapia?</label><select id="mod"><option value="">Selecione</option><option>Individual</option><option>De casal</option></select></div>
+        <div class="field full"><label for="m" id="mL">O que te trouxe até aqui? <span class="opt">(opcional)</span></label><textarea id="m" placeholder="Conte do seu jeito"></textarea></div>
+        <div class="field"><label for="j">Já fez terapia antes?</label><select id="j"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></div>
+        <div class="field"><label for="h">Melhor horário</label><select id="h"><option value="">Selecione</option><option>Manhã</option><option>Tarde</option><option>Noite</option><option>Tanto faz</option></select></div>
+        <label class="consent" for="c"><input id="c" type="checkbox">Aceito ser contatada por Rosane Tailine sobre a opção que escolhi e autorizo o uso destes dados para isso. Eles não são compartilhados com terceiros e posso pedir a exclusão quando quiser (LGPD).</label>
+        <p class="err" id="er" hidden></p>
+        <button class="btn full" type="submit" id="b">Entrar na lista de espera</button>
       </form>
-
-      <div id="successMsg" class="success">
-        <div class="icon">✓</div>
-        <h2>Recebi sua mensagem</h2>
-        <p>Obrigada por confiar em mim com isso. Vou ler com carinho e te chamo no WhatsApp em breve para conversarmos.</p>
-      </div>
-
     </div>
-  </div>
-</main>
 
-<footer>
-  Rosane Tailine · Psicóloga Clínica · CRP 14/08284-5
-</footer>
+    <div class="done" id="ok" hidden>
+      <span class="eyebrow">Tudo certo</span>
+      <h3 id="okt">Você está na lista!</h3>
+      <p>Assim que abrir uma vaga, eu te aviso.</p>
+      <div class="row">
+        <a class="btn" id="zap" href="#" target="_blank" rel="noopener">Falar com a Rosane no WhatsApp</a>
+        <a class="btn line" href="guia.html">Voltar ao guia</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span><b>Rosane Tailine</b> · Psicóloga · CRP 14/08284-5 · @rosanetailinepsi</span>
+    <span>Em sofrimento intenso, ligue para o CVV: 188, 24 horas, gratuito.</span>
+  </footer>
+</div>
 
 <script>
-  // Cole aqui a URL do seu Google Apps Script Web App (termina em /exec)
-  const SCRIPT_URL = "COLE_AQUI_A_URL_DO_SEU_APPS_SCRIPT_WEB_APP";
-
-  const form = document.getElementById('leadForm');
-  const errorMsg = document.getElementById('errorMsg');
-  const successMsg = document.getElementById('successMsg');
-  const submitBtn = document.getElementById('submitBtn');
-
-  form.addEventListener('submit', async function (ev) {
-    ev.preventDefault();
-    errorMsg.classList.remove('show');
-
-    const data = new URLSearchParams();
-    data.append('nome', form.nome.value.trim());
-    data.append('whatsapp', form.whatsapp.value.trim());
-    data.append('email', form.email.value.trim());
-    data.append('interesse', form.interesse.value || '');
-    data.append('motivo', form.motivo.value.trim());
-    data.append('jaFezTerapia', form.jaFezTerapia.value || '');
-    data.append('horario', form.horario.value || '');
-    data.append('consentimento', form.consentimento.checked ? 'Sim' : 'Não');
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-
-    try {
-      await fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: data
-      });
-      form.style.display = 'none';
-      successMsg.classList.add('show');
-    } catch (err) {
-      errorMsg.classList.add('show');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Quero dar esse passo';
-    }
-  });
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbySnl_cPbBfWdJOTEr3kCOGKtSYPeTWhXe2QLrnvvwWbAU9ti9ue4qcYGlUxaZMv6PrXg/exec';
+const ZAP='5567991451001';
+const $=s=>document.querySelector(s);
+const ok=()=>SCRIPT_URL.indexOf('https://script.google.com')===0;
+try{const l=JSON.parse(localStorage.getItem('rt_lead'));if(l){$('#n').value=l.nome||'';$('#e').value=l.email||'';$('#t').value=l.whatsapp||''}}catch(x){}
+document.querySelectorAll('input[name=int]').forEach(r=>r.addEventListener('change',()=>{const t=r.value==='Terapia'&&r.checked;if(r.checked){$('#modBox').hidden=!t;$('#grpBox').hidden=t;$('#mL').innerHTML=t?'O que você está buscando na terapia? <span class="opt">(opcional)</span>':'O que te trouxe até aqui? <span class="opt">(opcional)</span>'}}));
+$('#espF').addEventListener('submit',async ev=>{
+  ev.preventDefault();
+  const er=$('#er'),b=$('#b');er.hidden=true;
+  const nome=$('#n').value.trim(),email=$('#e').value.trim(),tel=$('#t').value.trim();
+  if(nome.length<2||!email||!$('#e').checkValidity()||!$('#c').checked){
+    er.textContent='Preencha seu nome, um e-mail válido e marque o aceite para continuar.';er.hidden=false;return}
+  if(tel&&tel.replace(/\D/g,'').length<10){er.textContent='Confira o WhatsApp com DDD, ou deixe em branco.';er.hidden=false;return}
+  const interesse=document.querySelector('input[name=int]:checked').value;
+  if(interesse==='Grupo terapêutico'&&!document.querySelector('input[name=quer]:checked')){er.textContent='Conte se deseja fazer parte do grupo.';er.hidden=false;return}
+  if(interesse==='Terapia'&&!$('#mod').value){er.textContent='Escolha o tipo de terapia.';er.hidden=false;return}
+  if(!ok()){er.textContent='O envio ainda não foi ativado. Tente novamente em breve.';er.hidden=false;return}
+  b.disabled=true;b.textContent='Enviando...';
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams({nome,email,whatsapp:tel,interesse,modalidade:interesse==='Terapia'?$('#mod').value:'',temas:interesse==='Grupo terapêutico'?[...document.querySelectorAll('input[name=tema]:checked')].map(x=>x.value).join(', '):'',quer:interesse==='Grupo terapêutico'?document.querySelector('input[name=quer]:checked').value:'',motivo:$('#m').value.trim(),jaFezTerapia:$('#j').value,horario:$('#h').value,consentimento:'Sim'})})}
+  catch(x){er.textContent='Não consegui enviar agora. Tente de novo em instantes.';er.hidden=false;b.disabled=false;b.textContent='Entrar na lista de espera';return}
+  $('#okt').textContent='Você está na lista, '+nome.split(' ')[0]+'!';
+  $('#zap').href='https://wa.me/'+ZAP+'?text='+encodeURIComponent('Oi, Rosane! Sou '+nome+'. Entrei na lista de espera ('+interesse.toLowerCase()+').');
+  $('#espForm').hidden=true;$('#ok').hidden=false;
+});
 </script>
 
-</body>
 </html>
